@@ -344,20 +344,30 @@ Sesudah:
 **![](https://lh4.googleusercontent.com/HSi500eQ5z-dGWzoMsED6sPKMIel3Odz9Jilj1XZ-tsK0biTP-fGV7Lqbbgsi8kNt58uToa0wOqQ5-4PrlFZZ2QZckU3RCK2PZFQYFl2YxwMa9bvHcTsyLskgBN0EuFgr3srjITd)**  
 ### no 4
 
-iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 07:00 --timestop 17:00 --weekdays Mon,Tue,Wed,Thu,Fri -j ACCEPT #malang
+iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 07:00 --timestop 17:00 --weekdays Mon,Tue,Wed,Thu,Fri -j ACCEPT #malang  
 
-iptables -A INPUT -s 192.168.1.0/24 -j REJECT #malang
+iptables -A INPUT -s 192.168.1.0/24 -j REJECT #malang  
+Hasil:  
+**![](https://lh3.googleusercontent.com/Vw1LfjOdtH_XJDFQlpWUwKa7glpgsRWigZZf5jmKKrSnnGE_4rkEjcVB4dMFaAAGYqALZ9uPE0AOJxPt8msC7SgQUyaMY3IQN4BVdvQuioTmXC5O3MUtl3b9ct49Ya2em3td4j88)**  
+Jika diganti waktu:  
+**![](https://lh5.googleusercontent.com/f6CcJ4ojKqBTMVM1DR11TB3TkKp2O2Pj5rbfofcBgVZMVyGFbbZCBN4vF8KYYwIBl4ZE6SUtzYj2tSDxWz8rLid_UECSAxZA9KUU8E7bhIoyd6Fi5udEoKVpn43OCtDZBgl6U68B)**  
 
 ### no 5
 
-iptables -A INPUT -s 192.168.2.0/24 -m time --timestart 07:00 --timestop 17:00 -j REJECT #malang
+iptables -A INPUT -s 192.168.2.0/24 -m time --timestart 07:00 --timestop 17:00 -j REJECT #malang  
+Hasil:  
+**![](https://lh3.googleusercontent.com/-IAjXqb54qQBjM4Fco2RSz9jEsEAktmQhy51D7zasNpJ_uUa8YNuGf1Q9g6LXcWMYsx5x9SRoJmTRl1G_SNI2s6SiGZs8l6WXkrdS5WjtZaJP85F4El6BxyS1saxkt2hAO20JJvQ)**  
+Jika diganti waktu:  
+**![](https://lh3.googleusercontent.com/gpUSKsWQlESazZggXSMeaoQ-bawyqn5sfgG0f62XI-mRpDadgCPFgKaaMqDPblJ5lKtDbcwiUyoh0ShEmLAnsUpRDBIinetlGZAGNhPuUmnZ1CZz7ateh89rhmcY1PJn6XLkFKf8)**  
 
 ### no 6
 
-iptables -A PREROUTING -t nat -p tcp -d 10.151.77.50 --dport 80 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 192.168.0.11:80 #surabaya
+iptables -A PREROUTING -t nat -p tcp -d 10.151.77.50 --dport 80 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 192.168.0.11:80 #surabaya  
 
-iptables -A PREROUTING -t nat -p tcp -d 10.151.77.50 --dport 80 -j DNAT --to-destination 192.168.0.10:80
+iptables -A PREROUTING -t nat -p tcp -d 10.151.77.50 --dport 80 -j DNAT --to-destination 192.168.0.10:80  
 
+Hasil, jika dilakukan koneksi akan berubah bolak-balik:  
+**![](https://lh3.googleusercontent.com/L_xwIYQXHva5q3lONeGHS3nkxlE2d5lPV_VyP0op18swtUC1F4VQnkK4lSgq4jyEMrP4L_7uQeg5w86LKuDXphS69Hr6fAEVC8bXUlSdugeJjHs01DtOG4FyfwZHxu_z5uiA3Idi)**  
 ### no 7
 
 iptables -N LOGGING
