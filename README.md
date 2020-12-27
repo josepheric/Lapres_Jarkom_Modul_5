@@ -2,17 +2,21 @@
 ##  Kelompok C05
 
 Joseph Eric Amadeo S. / 05111840000077   
-Feinard / 05111840000081
+Feinard / 05111840000081  
 
 ## Gambar Pembagian Subnet
+Pertama-tama kami melakukan pembagian subnet dengan metode VLSM:  
 
 **![](https://lh3.googleusercontent.com/32tLbgsSSPSI4CBVnlyd-pMew37z4D2PV5oxxh6EwtgRaxf4i5lk6R7KGyGW_kUslfktEUc3UqkSsoVt_4hljPt_Hel2tugOiMYK4E2fvtPnUJ7u9C8Yj3X1_wkx4A_U6M2QTDsI)**  
 ## Tree Pembagian Subnet
+Lalu dibuat tree berikut:  
 **![](https://lh5.googleusercontent.com/qK3E2Oi5XeNcD663cob82aGLfCsHUnaEdAL974_H4bgAtshVdAe0apEImUQKayde5_gji6QodyiVKldS4jtrewqgK8akgEnRcbCujHPmuaDmN7dbV-C5Z-ysALqiP93F9w3HPr2L)**  
 
 ## Pembagian IP
+Pembagian IP dari tree diatas:  
 **![](https://lh6.googleusercontent.com/OJj1DP1Oxc4qWeDYyShMPe8nq4MxqBazMIr6_10fmgf80VG_GW6Cw0i9RlDzhmpJXluKDfjx0KryvQaGkA8x6j9AKJDTvCAU2JdLX1Z-TkkdBBGaScc-NNcg8Goxt4itJ1kkuRar)**  
 ## Switch  
+Lalu dibuat switchnya:  
 ```
 # Switch
 
