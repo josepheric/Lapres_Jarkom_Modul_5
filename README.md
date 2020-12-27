@@ -1,4 +1,5 @@
-# Lapres Modul 5
+# Lapres Jarkom Modul 5
+##  Kelompok C05
 
 Joseph Eric Amadeo S. / 05111840000077   
 Feinard / 05111840000081
@@ -368,15 +369,19 @@ iptables -A PREROUTING -t nat -p tcp -d 10.151.77.50 --dport 80 -j DNAT --to-des
 
 Hasil, jika dilakukan koneksi akan berubah bolak-balik:  
 **![](https://lh3.googleusercontent.com/L_xwIYQXHva5q3lONeGHS3nkxlE2d5lPV_VyP0op18swtUC1F4VQnkK4lSgq4jyEMrP4L_7uQeg5w86LKuDXphS69Hr6fAEVC8bXUlSdugeJjHs01DtOG4FyfwZHxu_z5uiA3Idi)**  
+Jika dilakukan koneksi ulang:  
+**![](https://lh6.googleusercontent.com/dyMINebJkK5LkFSpJlOoOxRIsf6a4UE3mGvRKdLwZ75_oGpLrwlOuD_j11R25L-JcimADNTQ8p3kXc4UaZlLJSyFrDyiRtF4VhyVYjjruRN7v_vwy92qinVk3nZglV5sE45z61Cy)**  
 ### no 7
 
-iptables -N LOGGING
+iptables -N LOGGING  
 
-iptables -A INPUT -j LOGGING
+iptables -A INPUT -j LOGGING  
 
-iptables -A OUTPUT -j LOGGING
+iptables -A OUTPUT -j LOGGING  
 
-iptables -A LOGGING -j LOG --log-prefix "IPTables-Dropped: " --log-level 4
+iptables -A LOGGING -j LOG --log-prefix "IPTables-Dropped: " --log-level 4  
 
-iptables -A LOGGING -j DROP
-
+iptables -A LOGGING -j DROP  
+Hasil, jika didrop maka mengeluarkan IPTables-Dropped di console dan disimpan di var/log/messages:  
+**![](https://lh5.googleusercontent.com/40awJmzsQB9r8Q4eGeTmP5w_Hk_rkG75I9e6A27hDBkPZNJFbZyJ1hSvB2dDEpKhOPoemRoq_M9syIO06epKssm_h09ZC3i3OH25embo9NYaPoM4154gQJkFzAy7HtiMKe44d1iw)**  
+**![](https://lh4.googleusercontent.com/xOp_3icb5nwacUp9WPGAj0Z5o0af0HES_v7rJjgWmXQSG3GVkUDalDi8DaluX_CZA9nqSG_p9zuaMBK56HpaFrMW2_xmKz_lRr65bc22dQEqU9QUnsx1pk9srtkI70WYPY_0sLyn)**  
